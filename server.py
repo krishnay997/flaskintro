@@ -6,6 +6,12 @@ def index():
    return render_template('index.html')
 
 
+@app.route("/<name>")
+def index2(name):
+   name=name.upper()
+   return render_template('index.html',name=name)
+
+
 @app.route('/user/<username>')
 def show(username):
     return f"Hi {username[0:8]}"
